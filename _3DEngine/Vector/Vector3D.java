@@ -72,6 +72,10 @@ public class Vector3D {
         return new Vector3D(x / length, y / length, z / length);
     }
 
+    public Vector3D subtract(Vector3D v) {
+        return new Vector3D(this.x - v.x, this.y - v.y, this.z - v.z);
+    }
+
 
     // Methode zur Ausgabe des Vektors als String, für Debugging Zwecke!!!
     @Override
