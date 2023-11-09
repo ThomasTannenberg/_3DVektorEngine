@@ -40,6 +40,36 @@ public class Matrix3D {
         );
     }
 
-    // Weitere Methoden zur Erstellung von Transformationsmatrizen (Rotation, Skalierung, Translation) könnten hier hinzugefügt werden
+    // Erstellt eine Skalierungsmatrix
+    public static Matrix3D scale(float sx, float sy, float sz) {
+        Matrix3D result = Matrix3D.identity();
+        result.m[0][0] = sx;
+        result.m[1][1] = sy;
+        result.m[2][2] = sz;
+        return result;
+    }
+
+    // Erstellt eine Translationsmatrix
+    public static Matrix3D translate(float tx, float ty, float tz) {
+        Matrix3D result = Matrix3D.identity();
+        result.m[0][3] = tx;
+        result.m[1][3] = ty;
+        result.m[2][3] = tz;
+        return result;
+    }
+
+    // Erstellt eine Rotationsmatrix um die X-Achse
+    public static Matrix3D rotateX(float angle) {
+        Matrix3D result = Matrix3D.identity();
+        float cosTheta = (float)Math.cos(angle);
+        float sinTheta = (float)Math.sin(angle);
+
+        result.m[1][1] = cosTheta;
+        result.m[1][2] = -sinTheta;
+        result.m[2][1] = sinTheta;
+        result.m[2][2] = cosTheta;
+
+        return result;
+    }
 }
 
