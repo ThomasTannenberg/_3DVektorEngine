@@ -9,6 +9,7 @@ public class Camera {
     private Vector3D up;
 
     public Camera(Vector3D position, Vector3D target, Vector3D up) {
+
         this.position = position;
         this.target = target;
         this.up = up;
@@ -32,9 +33,10 @@ public class Camera {
         viewMatrix.m[2][0] = zAxis.x;
         viewMatrix.m[2][1] = zAxis.y;
         viewMatrix.m[2][2] = zAxis.z;
-        viewMatrix.m[0][3] = -xAxis.dot(position);
-        viewMatrix.m[1][3] = -yAxis.dot(position);
-        viewMatrix.m[2][3] = -zAxis.dot(position);
+        viewMatrix.m[0][3] = -Vector3D.dot(xAxis, position);
+        viewMatrix.m[1][3] = -Vector3D.dot(yAxis, position);
+        viewMatrix.m[2][3] = -Vector3D.dot(zAxis, position);
+
 
         return viewMatrix;
     }

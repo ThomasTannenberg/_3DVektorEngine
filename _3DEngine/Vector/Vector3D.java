@@ -22,9 +22,10 @@ public class Vector3D {
         return new Vector3D(this.x * scalar, this.y * scalar, this.z * scalar);
     }
 
-    public Vector3D dot(Vector3D v) {
-        return new Vector3D(this.x * v.x, this.y * v.y, this.z * v.z);
+    public double dot(Vector3D v) {
+        return this.x * v.x + this.y * v.y + this.z * v.z;
     }
+
 
     public Vector3D cross(Vector3D v) {
         return new Vector3D(this.y * v.z - this.z * v.y,

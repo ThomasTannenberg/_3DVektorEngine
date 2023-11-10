@@ -2,7 +2,7 @@ package _3DEngine.Vector;
 
 public class Matrix3D {
     // Ein 4x4-Array für die Matrix-Darstellung
-    private float[][] m;
+    public float[][] m;
 
     public Matrix3D() {
         m = new float[4][4];
